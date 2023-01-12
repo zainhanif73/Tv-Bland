@@ -4,7 +4,7 @@ import List from './List'
 function Main() {
     return (
         <>
-            <div className="text-white pl-32 pb-16 pt-16 bg-[#27221C]">
+            <div className="text-white pl-8 pb-4 md:pl-32 md:pb-16 pt-16 bg-[#27221C]">
                 <p className='text-[19px] font-[600]'>Tv Bland</p>
                 <p className='text-gray-300 flex align-center py-10 tracking-[1px] align-left'>
                     TV Shows and web series database.
@@ -13,7 +13,6 @@ function Main() {
                     <br />
                     character information.
                 </p>
-                <p className='text-[24px]'>Last Added Shows</p>
             </div>
             <List />
         </>
