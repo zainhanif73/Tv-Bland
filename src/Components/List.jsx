@@ -8,6 +8,7 @@ function List() {
     useEffect(() => {
         axios.get('https://api.tvmaze.com/shows').then(response => {
             setData(response?.data)
+            console.log(response.data)
         })
             .catch(error => {
                 console.error(error);
@@ -20,10 +21,15 @@ function List() {
                 <br />
                 {
                     data && data.length && data.map((data) => (
-                        <div onClick={() => { route("/show/bcdjkbcsdjbcjkds") }} className='mt-8 transition ease-in-out w-[160px] mt-[70px] mx-4 delay-300 cursor-pointer hover:scale-110 '>
+                        <div onClick={() => { route("/show/"+data.id) }} className='mt-8 transition ease-in-out w-[160px] mt-[70px] mx-4 delay-300 cursor-pointer hover:scale-110 '>
                             <img width={160} height={225} src={data.image.medium} alt="" />
                             <div class="flex items-center gap-2 text-[14px] mt-2 text-gray-500">
-                                <p class="text-[#F79B34] text-[20px]">★</p><p class="text-[#F79B34] text-[20px]">★</p><p class="text-[#F79B34] text-[20px]">★</p><p class="text-[20px]">★</p><p class="text-[20px]">★</p>
+                                <p class={data.rating.average>2? "text-[#F79B34] text-[20px]" :"text-[20px]"}>★</p>
+                                <p class={data.rating.average>4? "text-[#F79B34] text-[20px]" :"text-[20px]"}>★</p>
+                                <p class={data.rating.average>6? "text-[#F79B34] text-[20px]" :"text-[20px]"}>★</p>
+                                <p class={data.rating.average>8? "text-[#F79B34] text-[20px]" :"text-[20px]"}>★</p>
+                                <p class={data.rating.average>9? "text-[#F79B34] text-[20px]" :"text-[20px]"}>★</p>
+
                             </div>
                             <p className='mt-4 w-[180px]'>{data.summary.toString().replace(/(<([^>]+)>)/gi, "").substring(0, 70) + "..."}</p>
                         </div>
