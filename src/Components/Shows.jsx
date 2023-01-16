@@ -26,7 +26,6 @@ function Shows() {
         console.error(error);
       });
   }, [])
-  console.log(stream)
   return (
     <>
       {

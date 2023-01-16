@@ -1,19 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useRoutes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function List() {
     const [data, setData] = useState();
     const route = useNavigate();
+    
     useEffect(() => {
         axios.get('https://api.tvmaze.com/shows').then(response => {
             setData(response?.data)
-            console.log(response.data)
         })
             .catch(error => {
                 console.error(error);
             })
     }, [])
+
     return (
         <>
             <p className='mt-4 z-100 absolute top-[250px] pl-4 pt-4 md:pt-0 md:pl-32 text-[#27221C] md:text-[#ffffff] md:mt-0 text-[24px]'>Last Added Shows</p>
