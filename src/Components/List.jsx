@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { fetchData } from '../Utils/Axios'
 
 function List() {
     const [data, setData] = useState();
     const route = useNavigate();
-    
+
     useEffect(() => {
-        axios.get('https://api.tvmaze.com/shows').then(response => {
-            setData(response?.data)
+        fetchData('https://api.tvmaze.com/shows').then(response => {
+            setData(response)
         })
             .catch(error => {
                 console.error(error);

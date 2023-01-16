@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SVG from '../Svg/BackArrow'
+import { fetchData } from '../Utils/Axios'
 
 function Shows() {
   const navigate = useNavigate();
@@ -11,16 +12,15 @@ function Shows() {
   useEffect(() => {
     let id = window.location.pathname.split('/').at(-1)
 
-    axios.get(`https://api.tvmaze.com/shows/${id}/cast`).then(response => {
-      setCharacter(response?.data)
+    fetchData(`https://api.tvmaze.com/shows/${id}/cast`).then(response => {
+      setCharacter(response)
     })
       .catch(error => {
         console.error(error);
       });
 
-    axios.get(`https://api.tvmaze.com/shows/${id}`).then(response => {
-      console.log(response.data)
-      setStream(response?.data)
+    fetchData(`https://api.tvmaze.com/shows/${id}`).then(response => {
+      setStream(response)
     })
       .catch(error => {
         console.error(error);

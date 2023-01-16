@@ -1,5 +1,6 @@
-import axios from axios
+import axios from "axios";
 
-function GetDataFromApi(url) {
-    axios.get(url).then((response) => response.data).catch((error) => console.log(error))
+export const fetchData = async (url) => {
+    const { data } = await axios.get(url);
+    return data;
 }
