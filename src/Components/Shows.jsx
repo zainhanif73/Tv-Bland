@@ -6,13 +6,13 @@ function Shows() {
   const navigate = useNavigate();
   return (
     <>
-      <div className='text-white pb-4 pl-8 md:pl-24 md:pb-8 pt-8 md:pt-16 bg-[#27221C]'>
+      <div className='text-white pb-4 pl-8 md:pl-8 md:pb-8 pt-8  bg-[#27221C]'>
         <p className='text-[19px] md:hidden flex gap-1 font-[600]'><span className='cursor-pointer' onClick={() => navigate("/")}><SVG /></span>Tv Bland</p>
-        <div className='z-100 pt-16 md:pt-0 md:absolute top-[230px] md:ml-24 '>
+        <div className='z-100 pt-8 md:pt-0 md:absolute top-[170px] md:ml-24 '>
           <img width={200} height={280} className="rounded hidden md:block object-cover" src="https://tv-maze-sooty.vercel.app/_next/image?url=https%3A%2F%2Fstatic.tvmaze.com%2Fuploads%2Fimages%2Fmedium_portrait%2F81%2F202627.jpg&w=2048&q=75" alt="" />
-          <img class="rounded object-cover pr-[20px] w-full md:hidden" src="https://static.tvmaze.com/uploads/images/original_untouched/163/407679.jpg" alt="showcover"></img>
+          <img style={{marginLeft:"-6px"}} class="rounded object-cover pr-[20px] w-full md:hidden" src="https://static.tvmaze.com/uploads/images/original_untouched/163/407679.jpg" alt="showcover"></img>
         </div>
-        <div className="text-white pb-4 md:pl-24 md:pb-16 pt-16 bg-[#27221C]">
+        <div className="text-white pb-4 md:pl-24 md:pb-8 pt-16 bg-[#27221C]">
           <p className='hidden md:flex text-[19px] flex gap-1 font-[600]'>
             <span className='hidden md:block cursor-pointer' onClick={() => navigate("/")}><SVG />
             </span>
